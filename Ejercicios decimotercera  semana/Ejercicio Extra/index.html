@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+    <link rel="stylesheet" type="text/css" href="Personajes.css" media="screen">
+</head>
+
+<body>
+    <header>
+        <h1>Juego Del Guerrero
+        </h1>
+    </header>
+
+    <section>
+        <article>Lado Izquierdo<br><br>
+            Tiene responsive.<br><br>
+            Tiene un fallo donde si atacas y haces responsive los personajes quedan bailando por la web<br><br>
+            Derrotas a 13 enemigos que va incrementando, el 14 se pierde
+        </article>
+
+        <article>
+            <div id="tablero">
+
+                <div class="heroe">
+                    <h1>Heroe</h1>
+                    <h3>Nombre: <nombreHeroe id="nombreHeroe"></nombreHeroe>
+                    </h3>
+                    <h3>Nivel: <lvl id="nivelHeroe"></lvl>
+                    </h3>
+
+                    <h3>Salud: <hp id="vidaHeroe">-1</hp>
+                    </h3>
+                    <h3>Ataque: <ataque id="ataqueHeroe"></ataque>
+                    </h3>
+                    <h3>Experiencia: <exp id="experienciaHeroe">-1</exp>
+                    </h3>
+
+                </div>
+
+                <div class="enemigo">
+                    <h1>Enemigo</h1>
+                    <h3>Nombre: <nombreEnemigo id="nombreEnemigo"></nombreEnemigo>
+                    </h3>
+                    <h3>Nivel: <lvl id="nivelEnemigo">-1</lvl>
+                    </h3>
+                    <h3>Salud: <hp id="vidaEnemigo">-1</hp>
+                    </h3>
+                    <h3>Ataque: <ataque id="ataqueEnemigo">-1</ataque>
+                    </h3>
+
+                </div>
+
+                <div class="Botones">
+                    <input id="BotonAtacar" type="button" value="Atacar">
+                    <input id="BotonContinuar" type="button" value="Siguiente">
+                    <input id="ReiniciarJuego" type="button" value="Reiniciar">
+                </div>
+
+                <div id="padre"><br>
+                    <h2>Resultado: <resultadoVD id="Resultado"></resultadoVD>
+                    </h2>
+                    <div id="hijo">Jugador Heroe:<br>
+                        <dibujoHeroe id="dibujoHeroe"></dibujoHeroe>
+                    </div>
+                    <div id="hijo">Jugador Enemigo:<br>
+                        <dibujoEnemigo id="dibujoEnemigo"></dibujoEnemigo>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </article>
+
+        <article>Lado Derecho</article>
+
+
+        <script src="Personaje.js"></script>
+        <script src="Heroe.js"></script>
+        <script src="Enemigo.js"></script>
+
+</body>
+<footer>
+    <script src="main.js"></script>
+</footer>
+
+
+</html>

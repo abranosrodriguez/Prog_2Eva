@@ -1,0 +1,72 @@
+#dibujoHeroe{
+    background:#98bf21;
+    height:5vh;
+    width:5vh;
+    position:absolute;
+}
+
+#dibujoEnemigo{
+    background:#e21616;
+    height:5vh;
+    width:5vh;
+    position:absolute
+}
+
+
+section {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    height: 100vh;
+}
+
+header {
+    background: rgb(78, 242, 248);
+    text-align: center;
+    height: max-content;
+    padding: 1em;
+}
+
+article {
+    flex: 1;
+    border-width: 1px;
+    border-style: solid;
+    padding: 1em;
+}
+
+article:nth-of-type(2) {
+    flex: 2;
+}
+
+#tablero {
+    border-style: solid;
+    border-color: red;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: 2fr 10fr;
+    height: 80vh;
+    gap: 5px;
+    /* 
+    5-> Alto y ancho de la celda negra
+    6-> Responsive
+    7-> Separacion entre los div , celdas negras
+    */
+}
+
+
+#tablero div {
+    border-style: solid;
+    margin: 10px;
+    padding: 5px;
+}
+
+#padre {
+    display: table;
+    height:150px;
+}
+#hijo {
+    display: table-cell;
+    vertical-align: middle;
+    border: 0px;
+    text-align: center;
+}
