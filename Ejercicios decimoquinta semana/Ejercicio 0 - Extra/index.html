@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+    <link rel="stylesheet" type="text/css" href="Personajes.css" media="screen">
+</head>
+
+<body>
+    <header>
+        <h1>Juego Del Guerrero
+        </h1>
+    </header>
+
+    <section>
+        <article>
+            <ul>
+                <li>Si gastas el maná cuando empieces un nuevo enemigo se resetea de nase</li>
+                <li>Nunca te puedes quedar a 0 de mana, para lanzar un hechizo si cuesta 3 necesitas 4 para quedarte a 1
+                </li>
+                <li>Si usas la defensa tiene un couldown hasta que el enemigo tenga el ataque normal</li>
+                <li>La defensa baja el siguiente ataque del rival a la mitad</li>
+            </ul>
+
+        </article>
+
+        <article>
+            <div id="tablero">
+
+                <div class="heroe">
+                    <h1>Heroe</h1>
+                    <h3>Nombre: <input id="NombreHeroe" type="text" placeholder="Dame un nombre">
+                        <nombreHeroe id="nombreHeroe">-a</nombreHeroe>
+                        <input id="BotonEmpezar" type="button" value="Empazar Juego">
+                    </h3>
+                    <h3>Nivel: <lvl id="nivelHeroe">-1</lvl>
+                    </h3>
+
+                    <h3>Salud: <hp id="vidaHeroe">-1</hp>
+                    </h3>
+                    <h3>Ataque: <ataque id="ataqueHeroe">-1</ataque>
+                    </h3>
+                    <h3>Magia:<br>
+                        Coste [ <coste id="CosteMagia"></coste> ]<br>
+                        Daño [ <magia id="magiaHeroe">-1</magia> ] <br>
+                    </h3>
+                    <h3>Mana: <mana id="manaHeroe">-1</mana>
+                    </h3>
+                    <h3>Defensa: <defensa id="defensaHeroe">-1</defensa>
+                    </h3>
+                    <h3>Experiencia: <exp id="experienciaHeroe">-1</exp>
+                    </h3>
+
+                </div>
+
+                <div class="enemigo">
+                    <h1>Enemigo</h1>
+                    <h3>Nombre: <nombreEnemigo id="nombreEnemigo">-a</nombreEnemigo>
+                    </h3>
+                    <h3>Nivel: <lvl id="nivelEnemigo">-1</lvl>
+                    </h3>
+                    <h3>Salud: <hp id="vidaEnemigo">-1</hp>
+                    </h3>
+                    <h3>Ataque: <ataque id="ataqueEnemigo">-1</ataque>
+                    </h3>
+
+                </div>
+
+                <div class="Botones">
+                    Turno:<p id="turno"></p>
+                    <input id="BotonAtacar" type="button" value="Atacar">
+                    <input id="BotonDefender" type="button" value="Defender">
+                    <input id="BotonMagia" type="button" value="Magia">
+                    <input id="BotonContinuar" type="button" value="Continuar">
+                    <div id="Habilidades">
+                        <input id="BotonMasDaño" type="button" value="+1 Daño Físico">
+                        <input id="BotonMasDañoMagico" type="button" value="+1 Daño Mágico (+1 Coste Adicional)">
+                        <input id="BotonMasMana" type="button" value="+2 de Mana Base">
+                    </div>
+                    <input id="BotonReiniciar" type="button" value="Reiniciar Juego">
+
+                </div>
+
+                <div id="padre"><br>
+                    <h2>Resultado: <resultadoVD id="Resultado"></resultadoVD>
+                    </h2>
+                    <div id="hijo">Jugador Heroe:<br>
+                        <dibujoHeroe id="dibujoHeroe">
+                            <dibujoFuego id="dibujoFuego"></dibujoFuego>
+                        </dibujoHeroe>
+
+                    </div>
+                    <div id="hijo">Jugador Enemigo:<br>
+                        <dibujoEnemigo id="dibujoEnemigo"></dibujoEnemigo>
+                    </div>
+
+                </div>
+            </div>
+
+        </article>
+
+        <article></article>
+        <script src="nombresEnemigo.js"></script>
+        <script src="animacionesHeroe.js"></script>
+        <script src="animacionesEnemigo.js"></script>
+        <script src="Personaje.js"></script>
+        <script src="Heroe.js"></script>
+        <script src="Enemigo.js"></script>
+
+</body>
+<footer>
+    <script src="main.js"></script>
+</footer>
+
+
+</html>
