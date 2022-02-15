@@ -310,6 +310,7 @@ function main() {
         vidaBaseEnemigo = enemigo.vida
         enemigo.ataque = enemigo.subirAtaqueBase(ataqueBaseEnemigo)
         ataqueBaseEnemigo = enemigo.ataque
+        enemigo.nombre = nombresEnemigo()
         datosEnemigo()
         revivirEnemigo()
 
