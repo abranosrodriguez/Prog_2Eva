@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+    <link rel="stylesheet" type="text/css" href="Personajes.css" media="screen">
+</head>
+
+<body id="cuerpo">
+    <header>
+        <h1>Juego Del Guerrero
+        </h1>
+    </header>
+
+    <section>
+        <article>
+            <ul>
+                <li>Si gastas el maná cuando empieces un nuevo enemigo se resetea de nase</li>
+                <li>Nunca te puedes quedar a 0 de mana, para lanzar un hechizo si cuesta 3 necesitas 4 para quedarte a 1
+                </li>
+                <li>Si usas la defensa tiene un couldown hasta que el enemigo tenga el ataque normal</li>
+                <li>La defensa baja el siguiente ataque del rival a la mitad</li>
+            </ul>
+
+        </article>
+
+        <article>
+            <div id="tablero">
+
+                <div id="heroe">
+                    <h1>Heroe</h1>
+                    <h3>Nombre: <input id="NombreHeroe" type="text" placeholder="Dame un nombre" value="">
+                        <nombreHeroe id="nombreHeroe">-a</nombreHeroe>
+                        <input id="BotonEmpezar" type="button" value="Empezar Juego"><br>
+                        <input id="BorrarNombre" type="button" value="Borrar Nombre"><br>
+                    </h3>
+                    <h3>Nivel: <lvl id="nivelHeroe">-1</lvl>
+                    </h3>
+
+                    <h3>Salud: <hp id="vidaHeroe">-1</hp>
+                    </h3>
+                    <h3>Ataque: <ataque id="ataqueHeroe">-1</ataque>
+                    </h3>
+                    <h3>Magia:<br>
+                        Coste [ <coste id="CosteMagia"></coste> ]<br>
+                        Daño [ <magia id="magiaHeroe">-1</magia> ] <br>
+                    </h3>
+                    <h3>Mana: <mana id="manaHeroe">-1</mana>
+                    </h3>
+                    <h3>Defensa: <defensa id="defensaHeroe">-1</defensa>
+                    </h3>
+                    <h3>Experiencia: <exp id="experienciaHeroe">-1</exp>
+                    </h3>
+
+                </div>
+
+                <div id="enemigo">
+                    <h1>Enemigo</h1>
+                    <h3>Nombre: <nombreEnemigo id="nombreEnemigo">-a</nombreEnemigo>
+                    </h3>
+                    <h3>Nivel: <lvl id="nivelEnemigo">-1</lvl>
+                    </h3>
+                    <h3>Salud: <hp id="vidaEnemigo">-1</hp>
+                    </h3>
+                    <h3>Ataque: <ataque id="ataqueEnemigo">-1</ataque>
+                    </h3>
+
+                </div>
+
+                <div class="Botones">
+                    Turno:<p id="turno"></p>
+                    <input id="BotonAtacar" type="button" value="Atacar">
+                    <input id="BotonDefender" type="button" value="Defender">
+                    <input id="BotonMagia" type="button" value="Magia">
+                    <input id="BotonContinuar" type="button" value="Continuar">
+                    <div id="Habilidades">
+                        <input id="BotonMasDaño" type="button" value="+1 Daño Físico">
+                        <input id="BotonMasDañoMagico" type="button" value="+1 Daño Mágico (+1 Coste Adicional)">
+                        <input id="BotonMasMana" type="button" value="+2 de Mana Base">
+                    </div>
+                    <input id="BotonReiniciar" type="button" value="Reiniciar Juego">
+
+                </div>
+
+                <div id="padre"><br>
+                    <h2>Resultado: <resultadoVD id="Resultado"></resultadoVD>
+                    </h2>
+                    <div id="hijo">Jugador Heroe:<br>
+                        <dibujoHeroe id="dibujoHeroe">
+                            <dibujoFuego id="dibujoFuego"></dibujoFuego>
+                        </dibujoHeroe>
+
+                    </div>
+                    <div id="hijo">Jugador Enemigo:<br>
+                        <dibujoEnemigo id="dibujoEnemigo"></dibujoEnemigo>
+                    </div>
+
+                </div>
+            </div>
+
+        </article>
+
+        <article>
+            <botones>
+                <h3>Botones:</h3>
+                <hr>
+                <h3> Color Texto Heroe:</h3>
+                <input type="radio" name="Colores" class="Colores" value="red">Rojo
+                <input type="radio" name="Colores" class="Colores" value="green">Verde
+                <input type="radio" name="Colores" class="Colores" value="blue">Azul
+                <input type="radio" name="Colores" class="Colores" value="pink">Rosa
+                <hr>
+                Personalizado <input type="color" name="Colores" class="Colores">
+                <hr>
+                <h3>Tipo de Texto</h3>
+                <input type="checkbox" name="changeStily" class="changeStily" value="italic">Cursiva
+                <input type="checkbox" name="changeStily" class="changeStily" value="bold">Negrita
+                <hr>
+                <h3>Anotaciones</h3>
+
+                <textarea id="anotaciones"></textarea>
+                <hr>
+                <h3>Fondo Heroe</h3>
+                <input type="radio" name="ColorFondoHeroe" class="ColorFondoHeroe" value="#fbc5ba">Naranja Suave
+                <input type="radio" name="ColorFondoHeroe" class="ColorFondoHeroe" value="#fbebba">Amarillo Suave<br>
+                <input type="radio" name="ColorFondoHeroe" class="ColorFondoHeroe" value="#e0fbba">Verde Suave
+                <input type="radio" name="ColorFondoHeroe" class="ColorFondoHeroe" value="#bafbdc">Azul Suave
+                <hr>
+                Personalizado <input type="color" name="ColorFondoHeroe" class="ColorFondoHeroe">
+                <hr>
+                <h3>Fondo Enemigo</h3>
+                <input type="radio" name="ColorFondoEnemigo" class="ColorFondoEnemigo" value="#fbc5ba">Naranja Suave
+                <input type="radio" name="ColorFondoEnemigo" class="ColorFondoEnemigo" value="#fbebba">Amarillo
+                Suave<br>
+                <input type="radio" name="ColorFondoEnemigo" class="ColorFondoEnemigo" value="#e0fbba">Verde Suave
+                <input type="radio" name="ColorFondoEnemigo" class="ColorFondoEnemigo" value="#bafbdc">Azul Suave
+                <hr>
+                Personalizado <input type="color" name="ColorFondoEnemigo" class="ColorFondoEnemigo">
+                <hr>
+                <input type="button" value="Borrar Cookies" id="BorrarCookies">
+
+            </botones>
+        </article>
+        <script src="nombresEnemigo.js"></script>
+        <script src="animacionesHeroe.js"></script>
+        <script src="animacionesEnemigo.js"></script>
+        <script src="Personaje.js"></script>
+        <script src="Heroe.js"></script>
+        <script src="Enemigo.js"></script>
+        <script src="cambioColor.js"></script>
+        <script src="guardadoAnotaciones.js"></script>
+        <script src="guardarNombreHeroe.js"></script>
+        <script src="guardarFondoHeroe.js"></script>
+        <script src="guardarFondoEnemigo.js"></script>
+        <script src="cambiarEstilo.js"></script>
+
+</body>
+<footer>
+    <script src="main.js"></script>
+</footer>
+
+
+</html>
