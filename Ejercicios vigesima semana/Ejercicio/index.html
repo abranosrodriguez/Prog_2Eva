@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+<script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+
+<body>
+    <div id="Reloj">
+        <input type="button" value="Reloj" id="Boton_Reloj">
+        <div id="Datos_Reloj">
+            <tiempo id="tiempo_reloj">00:00:00:0</tiempo><br>
+        </div>
+    </div><br><br>
+
+    <div id="Cronometro">
+        <input type="button" value="Cronometro" id="Boton_Cronometro">
+        <div id="Datos_Cronometro">
+            <div>
+                <tiempo id="tiempo_cronometro">00:00:00:0</tiempo><br>
+            </div>
+            <div>
+                <input type="button" value="Start" id="Start">
+                <input type="button" value="Flag" id="Flag">
+            </div>
+            Lista de tiempos:
+            <listas id="lista_de_tiempos"></listas>
+        </div>
+    </div> <br><br>
+
+
+
+    <div id="Temporizador">
+        <input type="button" value="Temporizador" id="Boton_Temporizador">
+        <div id="Datos_Temporizador">
+            <div>
+                <tiempo id="tiempo_temporizador">00:00:00:0</tiempo><br>
+            </div>
+
+            <div>
+                <select id="Horas_Temporizador"></select>
+                <select id="Minutos_Temporizador"></select>
+                <select id="Segundos_Temporizador"></select>
+            </div>
+            <div>
+                <input type="button" value="Start" id="Start_Temporizador">
+                <label>No he sido capaz de acabar el temporizador, error con el tiempo</label>
+            </div>
+        </div>
+    </div>
+
+    <script src="tiempo.js"></script>
+
+    <script src="Reloj/temporizador_reloj.js"></script>
+    <script src="Reloj/intervalo_reloj.js"></script>
+
+    <script src="Temporizador/tiempo_temporizador.js"></script>
+    <script src="Temporizador/tempo_temporizador.js"></script>
+
+
+    <script src="Cronometro/tiempo_cronometro.js"></script>
+    <script src="Cronometro/temporizador.js"></script>
+
+    <script src="Temporizador/valores_select_temporizador_horas.js"></script>
+    <script src="Temporizador/valores_select_temporizador_minutos.js"></script>
+    <script src="Temporizador/valores_select_temporizador_segundos.js"></script>
+    <script src="Temporizador/valores_seleccionados.js"></script>
+
+
+</body>
+<footer>
+    <script src="main.js"></script>
+</footer>
+
+</html>
